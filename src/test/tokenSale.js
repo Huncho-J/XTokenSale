@@ -9,7 +9,7 @@ contract('TOKENSALE', function(accounts){
   let tokenSale, xToken
 
   before(async () => {
-    xTok  en = await XToken.deployed()
+    xToken = await XToken.deployed()
     tokenSale = await TokenSale.deployed(xToken.address)
   })
 
@@ -24,8 +24,9 @@ contract('TOKENSALE', function(accounts){
     })
 
     it('it has xtokenContract', async () =>{
-      //const xtokenContract = await TokenSale.tokenContract();
-    //  assert.notEqual(address, 0x0)
+      xtokenContract = await tokenSale.tokenContract();
+      assert.notEqual(xtokenContract, 0x0)
+      assert.equal(tokenSale.tokenPrice().toNumber(),100)
     })
   })
 
