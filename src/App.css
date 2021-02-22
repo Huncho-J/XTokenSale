@@ -10,8 +10,7 @@ main {
      ul {
        margin-bottom: 0px;
      }
-
-     #completedTaskList .content {
-       color: grey;
-       text-decoration: line-through;
-     }
+ .center {
+    justify-content: center;
+    align-items: center;
+}

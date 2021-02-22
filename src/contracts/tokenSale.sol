@@ -21,10 +21,15 @@ contract tokenSale{
   }
 
   function buyToken(uint256 _numberOfTokens) public payable{
+      //Ensure buyer pays the correct price
       require(msg.value == multiply(_numberOfTokens, tokenPrice));
+      //Ensure contract has enough tokens
       require(tokenContract.balanceOf(address(this)) > _numberOfTokens);
+      //transfer tokens to buyer
       require(tokenContract.transfer(msg.sender, _numberOfTokens));
+      //update number of tokens sold
       tokensSold += _numberOfTokens ;
+      //emit sale event
      emit SellEvent(msg.sender, _numberOfTokens);
   }
   //End token sale

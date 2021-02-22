@@ -5,7 +5,7 @@ module.exports = async function (deployer) {
   await deployer.deploy(XToken,1000);
 	const xToken = await XToken.deployed()
 
-  const tokenPrice = 100;
+  const tokenPrice = 1;
 	await deployer.deploy(TokenSale, xToken.address,tokenPrice)
 	const tokenSale = await TokenSale.deployed()
 
