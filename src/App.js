@@ -40,6 +40,9 @@ async loadBlockChainData(){
       this.setState({xTokenPrice: xTokenPrice.toString()})
       let xTokenSold = await tokenSale.methods.tokensSold().call()
       this.setState({xTokenSold:xTokenSold.toString()})
+
+      const tokenSaleAccount = tokenSaleData.address
+      this.setState({tokenSaleAccount:tokenSaleAccount})
   } else{
       window.alert('contract was not deployed to test network.')
   }
@@ -62,12 +65,16 @@ this.setState({loading:false})
 
 buyTokens = (numberOfTokens) =>{
   this.setState({loading: true})
-  this.state.tokenSale.methods.buyToken(numberOfTokens)
+  this.state.tokenSale.methods.buyToken(numberOfTokens).send({
+    from:this.state.account,
+    value: this.state.xTokenPrice * numberOfTokens,
+    gas: 50000})
 }
 constructor(props) {
   super(props)
   this.state = {
     account: '',
+    tokenSaleAccount:'',
     tokenSale: null,
     xToken:null,
     xTokenPrice:0,
@@ -94,6 +101,11 @@ constructor(props) {
       </blockquote>
       <div className="col-lg-12 d-flex justify-content-center">
         <form  onSubmit={(event) => {
+          event.preventDefault()
+          let numberOfTokens
+          numberOfTokens = this.numberOfTokens.value.toString()
+          numberOfTokens = window.web3.utils.toWei(numberOfTokens, 'Ether')
+          this.buyTokens(numberOfTokens)
       }}>
      <p  className= "text-center">XToken price is {this.state.xTokenPrice} ether</p>
         <input className="form-control"
@@ -101,7 +113,6 @@ constructor(props) {
           type='number'
           ref={(input) => {this.numberOfTokens = input }}
           placeholder="1"
-          onChange={this.myChangeHandler}
      />
       <button type="submit" className="btn btn-primary btn-block"> Buy XToken</button>
   <br></br>
