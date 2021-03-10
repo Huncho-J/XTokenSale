@@ -43,6 +43,8 @@ async loadBlockChainData(){
 
       const tokenSaleAccount = tokenSaleData.address
       this.setState({tokenSaleAccount:tokenSaleAccount})
+
+      console.log(tokenSaleData.address)
   } else{
       window.alert('contract was not deployed to test network.')
   }
@@ -75,7 +77,7 @@ constructor(props) {
   this.state = {
     account: '',
     tokenSaleAccount:'',
-    tokenSale: null,
+    tokenSale: {},
     xToken:null,
     xTokenPrice:0,
     tokenSaleBalance:0,
