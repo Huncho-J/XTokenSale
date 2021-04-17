@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/XTokenSale/static/css/main.c86a3596.chunk.css",
+    "main.js": "/XTokenSale/static/js/main.1fe10e44.chunk.js",
+    "main.js.map": "/XTokenSale/static/js/main.1fe10e44.chunk.js.map",
+    "runtime-main.js": "/XTokenSale/static/js/runtime-main.338d554b.js",
+    "runtime-main.js.map": "/XTokenSale/static/js/runtime-main.338d554b.js.map",
+    "static/css/2.150d169a.chunk.css": "/XTokenSale/static/css/2.150d169a.chunk.css",
+    "static/js/2.3af317ee.chunk.js": "/XTokenSale/static/js/2.3af317ee.chunk.js",
+    "static/js/2.3af317ee.chunk.js.map": "/XTokenSale/static/js/2.3af317ee.chunk.js.map",
+    "static/js/3.b78d3637.chunk.js": "/XTokenSale/static/js/3.b78d3637.chunk.js",
+    "static/js/3.b78d3637.chunk.js.map": "/XTokenSale/static/js/3.b78d3637.chunk.js.map",
+    "index.html": "/XTokenSale/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/XTokenSale/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.c86a3596.chunk.css.map": "/XTokenSale/static/css/main.c86a3596.chunk.css.map",
+    "static/js/2.3af317ee.chunk.js.LICENSE.txt": "/XTokenSale/static/js/2.3af317ee.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.338d554b.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.3af317ee.chunk.js",
+    "static/css/main.c86a3596.chunk.css",
+    "static/js/main.1fe10e44.chunk.js"
+  ]
+}
